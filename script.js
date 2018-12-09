@@ -12,10 +12,13 @@ const sound = {
     108: "tom",
 }
 
+
 const chanel1 = []
 const chanel2 = []
 const chanel3 = []
 const chanel4 = []
+
+
 
 let isRec = false
 let recStartTime = 0
@@ -24,6 +27,7 @@ function appStart() {
     window.addEventListener('keypress', playSound)
     document.querySelector('#rec').addEventListener('click', recAudio)
     document.querySelector('#play').addEventListener('click', playAudio)
+    document.querySelector('')
 }
 
 function playSound(e) {
