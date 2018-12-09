@@ -14,6 +14,9 @@ const sound =
 }
 
 const chanel1 = []
+const chanel2 = []
+const chanel3 = []
+const chanel4 = []
 
 let isRec = false
 let recStartTime = 0
@@ -26,8 +29,13 @@ function appStart()
 
 function playSound(e)
 {
+    if (!sound[e.charCode]) 
+    {
+        return
+    }
     const soundName = sound[e.charCode]
     const audioDOM = document.querySelector(`#${soundName}`)
+    audioDOM.currentTime = 0
     audioDOM.play()
     
     if (isRec) 
@@ -40,7 +48,6 @@ function playSound(e)
        ) 
     }
    
-    
     // document.body.innerHTML += e.charCode + '<br>'
 }
 
@@ -53,5 +60,15 @@ function recAudio(e)
 }
 function playAudio() 
 {
-    
+    chanel1.forEach(sound =>
+        {
+            setTimeout(
+                ()=>
+                {
+                    const audioDOM = document.querySelector(`#${sound.name}`)
+                    audioDOM.currentTime = 0
+                    audioDOM.play()
+                },sound.time
+            )
+        })
 }
