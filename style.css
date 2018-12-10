@@ -1,5 +1,15 @@
-#buttons
-{
+body {
+    margin: 30px;
+}
+
+#buttons {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
+}
+
+#buttons>button {
+    padding: 10px;
+    margin: 5px;
+    
 }
